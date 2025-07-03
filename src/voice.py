@@ -3,7 +3,7 @@ import random
 import logging
 import multiprocessing
 
-import ytdl
+import src.ytdl as ytdl
 import mpv
 
 

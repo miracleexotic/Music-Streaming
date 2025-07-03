@@ -2,15 +2,29 @@ from textual import on, work
 from textual.app import App, ComposeResult
 from textual.message import Message
 from textual.widget import Widget
-from textual.widgets import Header, Input, Label, Static, DataTable
+from textual.widgets import (
+    Button,
+    Footer,
+    Header,
+    Input,
+    Label,
+    Static,
+    DataTable,
+    DataTable,
+    ListItem,
+    ListView,
+)
+from textual.containers import Horizontal, Vertical
 
 import asyncio
-from ytdl import *
 import mpv
-import voice
+from src.ytdl import *
+import src.voice as voice
 
 
 class MusicApp(App):
+
+    CSS_PATH = "styles.scss"
 
     BINDINGS = [
         ("ctrl+z", "player_skip", "Skip music"),
@@ -28,9 +42,13 @@ class MusicApp(App):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Input(placeholder="Search Music", id="SearchMusic")
-        yield Static("StreamUrl", id="StreamUrl")
+        with Horizontal(id="SearchBar"):
+            yield Label("", id="SearchIcon")
+            yield Input(placeholder="Search Music", id="SearchMusic")
+            yield Button("Search", id="SearchBtn")
+        # yield Label("DEBUG", id="debug")
         yield DataTable(id="SongList")
+        yield Footer()
 
     def on_mount(self) -> None:
         self.theme = "monokai"
@@ -38,7 +56,9 @@ class MusicApp(App):
         self.sub_title = "No Music for Playing"
 
         self.songList_table = self.query_one("#SongList", DataTable)
-        self.songList_table.add_columns("Title", "Duration")
+        self.songList_table.cursor_type = "row"
+        self.songList_table.zebra_stripes = True
+        self.songList_table.add_columns("Title", "Duration", "Uploader", "URL")
 
     #
     # Search Music
@@ -55,12 +75,14 @@ class MusicApp(App):
 
     async def get_source(self, search_input: Input) -> None:
         source = await YTDLSource.create_source(search_input.value)
-        row_key = self.songList_table.add_row(source.title, source.duration)
+        row_key = self.songList_table.add_row(
+            source.title, source.duration, source.uploader, source.url
+        )
         search_input.value = ""
         await self.voice_state.songs.put(voice.Song(source, row_key))
-        self.query_one("#StreamUrl", Static).update(
-            f"{source.title}:{len(self.voice_state.songs)}"
-        )
+        # self.query_one("#debug", Static).update(
+        #     f"{source.title}:{len(self.voice_state.songs)}"
+        # )
 
     #
     # Sougs Queue

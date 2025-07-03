@@ -1,0 +1,36 @@
+Header {
+  border-left: thick #15f5ba;
+}
+
+#SearchBar {
+  height: auto;
+  width: 100%;
+  margin: 1 0 1 0;
+
+  & #SearchIcon {
+    border: hidden;
+    height: auto;
+    content-align-horizontal: center;
+    min-width: 3;
+    background: #ffffff 100%;
+    color: #836fff;
+  }
+
+  & #SearchMusic {
+    border: hidden;
+    height: auto;
+    width: 1fr;
+    background: #ffffff 30%;
+  }
+
+  & #SearchBtn {
+    border: hidden;
+    min-width: 8;
+    background: #836fff;
+    color: #ffffff;
+    text-style: bold;
+    &:hover {
+      background-tint: #000000 10%;
+    }
+  }
+}
