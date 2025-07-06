@@ -35,3 +35,31 @@ Header {
     }
   }
 }
+
+#SongsListView {
+  height: auto;
+
+  Horizontal {
+    height: 1;
+  }
+
+  & .title.--icon {
+    color: #836fff;
+    text-style: reverse;
+    padding: 0 0 0 0;
+  }
+
+  & .title.--content {
+    color: #000000;
+    background: #f0f3ff;
+    width: 1fr;
+  }
+
+  & .--icon {
+    padding: 0 1 0 4;
+    color: #f0f3ff;
+  }
+
+  & .--content {
+  }
+}

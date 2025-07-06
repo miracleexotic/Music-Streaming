@@ -15,6 +15,7 @@ from textual.widgets import (
     ListView,
     TabbedContent,
     TabPane,
+    Rule,
 )
 from textual.containers import Horizontal, Vertical
 
@@ -99,10 +100,22 @@ class MusicApp(App):
             self.songs_listview.insert(
                 0,
                 (
-                    Label(f"{source.title}"),
-                    Label(f"{source.duration}"),
-                    Label(f"{source.uploader}"),
-                    Label(f"{source.url}"),
+                    Horizontal(
+                        Label(f" 󰎇 ", classes="title --icon"),
+                        Label(f" {source.title} ", classes="title --content"),
+                    ),
+                    Horizontal(
+                        Label(f"", classes="duration --icon"),
+                        Label(f"{source.duration}", classes="duration --content"),
+                    ),
+                    Horizontal(
+                        Label(f"", classes="uploader --icon"),
+                        Label(f"{source.uploader}", classes="uploader --content"),
+                    ),
+                    Horizontal(
+                        Label(f"", classes="url --icon"),
+                        Label(f"{source.url}", classes="url --content"),
+                    ),
                 ),
             )
 

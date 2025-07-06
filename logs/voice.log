@@ -1,0 +1,129 @@
+[07-Jul-25 01:38:08] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 01:38:27] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 01:38:27] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:38:27] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:38:27] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:38:27] getCurrentSong       :: INFO     :: [i] Song: b'\xe0\xb9\x80\xe0\xb8\xa1\xe0\xb8\xb7\xe0\xb9\x88\xe0\xb8\xad\xe0\xb8\xa1\xe0\xb8\xb2\xe0\xb8\x94\xe0\xb8\xb5\xe0\xb8\xa5\xe0\xb8\xb8\xe0\xb8\xa2\xe0\xb8\x9f\xe0\xb8\xb2\xe0\xb8\xa3\xe0\xb9\x8c\xe0\xb8\xa1 \xe0\xb8\x95\xe0\xb9\x89\xe0\xb8\xad\xe0\xb8\x87\xe0\xb8\xa5\xe0\xb8\xb8\xe0\xb9\x89\xe0\xb8\x99\xe0\xb9\x81\xe0\xb8\x84\xe0\xb9\x88\xe0\xb9\x84\xe0\xb8\xab\xe0\xb8\x99\xe0\xb9\x84\xe0\xb8\x9b\xe0\xb8\x94\xe0\xb8\xb9\xe0\xb8\x81\xe0\xb8\xb1\xe0\xb8\x99'
+[07-Jul-25 01:38:27] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:38:27] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:38:52] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:38:52] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:38:52] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:38:52] getCurrentSong       :: INFO     :: [i] Song: b'7 Eyl\xc3\xbcl 2024'
+[07-Jul-25 01:38:52] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:38:52] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:39:30] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 01:41:12] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 01:41:12] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:41:12] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:41:12] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:41:12] getCurrentSong       :: INFO     :: [i] Song: b'2Ectasy Feat. Z9 - Faded (Special Version)'
+[07-Jul-25 01:41:12] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:41:12] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:45:11] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:45:11] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:45:11] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:45:11] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Peaches ft. Daniel Caesar, Giveon'
+[07-Jul-25 01:45:11] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:45:11] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:48:42] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:48:42] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:48:42] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:51:45] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 01:52:47] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 01:52:47] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:52:47] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:52:47] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:52:47] getCurrentSong       :: INFO     :: [i] Song: b'DREAMGALS - SORRY (Prod. by MAYOJAMES) | YUPP!'
+[07-Jul-25 01:52:47] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:52:47] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:56:22] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:56:22] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:56:22] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:56:22] getCurrentSong       :: INFO     :: [i] Song: b'Peach Parfait #\xe3\x81\x9f\xe3\x82\x82\xe3\x82\xb0\xe3\x83\xab\xe3\x83\xa1 #japanesefood'
+[07-Jul-25 01:56:22] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:56:22] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 01:56:57] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 01:57:45] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 01:57:45] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 01:57:45] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 01:57:45] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 01:57:45] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Sorry (PURPOSE : The Movement)'
+[07-Jul-25 01:57:45] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 01:57:45] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:01:24] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:01:24] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:01:24] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:01:24] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Peaches ft. Daniel Caesar, Giveon'
+[07-Jul-25 02:01:24] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:01:24] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:01:55] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 02:02:07] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 02:02:07] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:02:07] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:02:07] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:02:07] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Peaches ft. Daniel Caesar, Giveon'
+[07-Jul-25 02:02:07] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:02:07] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:05:38] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:05:38] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:05:38] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:05:38] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Love Yourself (PURPOSE : The Movement)'
+[07-Jul-25 02:05:38] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:05:38] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:10:31] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:10:31] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:10:31] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:12:25] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 02:12:47] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 02:12:47] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:12:47] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:12:47] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:12:47] getCurrentSong       :: INFO     :: [i] Song: b'2Ectasy Feat. Z9 - Faded (Special Version)'
+[07-Jul-25 02:12:47] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:12:47] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:16:51] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:16:51] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:16:51] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:16:51] getCurrentSong       :: INFO     :: [i] Song: b'Justin Bieber - Sorry (PURPOSE : The Movement)'
+[07-Jul-25 02:16:51] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:16:51] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:19:12] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 02:19:39] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 02:19:39] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:19:39] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:19:39] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:19:39] getCurrentSong       :: INFO     :: [i] Song: b'Super Mario Party Jamboree Minigames - Peach Win by Doing Absolutely Everything'
+[07-Jul-25 02:19:39] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:19:39] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:21:31] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 02:21:47] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 02:21:47] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:21:47] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:21:47] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:21:47] getCurrentSong       :: INFO     :: [i] Song: b'Lewis Capaldi - Someone You Loved'
+[07-Jul-25 02:21:47] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:21:47] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:25:08] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:25:08] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:25:08] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:25:08] getCurrentSong       :: INFO     :: [i] Song: b'Ed Sheeran - Perfect (Official Music Video)'
+[07-Jul-25 02:25:08] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:25:08] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:29:46] __init__             :: DEBUG    :: VoiceState
+[07-Jul-25 02:30:22] audio_player_task    :: DEBUG    :: --- Start Audio Player ---
+[07-Jul-25 02:30:22] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:30:22] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:30:22] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:30:22] getCurrentSong       :: INFO     :: [i] Song: b'Dhruv - double take (Official Audio)'
+[07-Jul-25 02:30:22] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:30:22] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:31:50] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:31:50] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:31:50] getCurrentSong       :: DEBUG    :: Waiting for getting song...
+[07-Jul-25 02:31:50] getCurrentSong       :: INFO     :: [i] Song: b'Ed Sheeran - Photograph (Lyrics)'
+[07-Jul-25 02:31:50] playCurrentSong      :: INFO     :: [+] Starting
+[07-Jul-25 02:31:50] playCurrentSong      :: INFO     :: [+] Playing song...
+[07-Jul-25 02:32:23] audio_player_task    :: DEBUG    :: Queue: 0
+[07-Jul-25 02:32:23] audio_player_task    :: DEBUG    :: MODE: SOURCE
+[07-Jul-25 02:32:23] getCurrentSong       :: DEBUG    :: Waiting for getting song...
