@@ -13,6 +13,8 @@ from textual.widgets import (
     DataTable,
     ListItem,
     ListView,
+    TabbedContent,
+    TabPane,
 )
 from textual.containers import Horizontal, Vertical
 
@@ -40,14 +42,20 @@ class MusicApp(App):
         self.player_observe_property()
         self.voice_state = voice.VoiceState(self.player)
 
+        self.songs_history: list[str] = []
+
     def compose(self) -> ComposeResult:
         yield Header()
         with Horizontal(id="SearchBar"):
             yield Label("", id="SearchIcon")
             yield Input(placeholder="Search Music", id="SearchMusic")
             yield Button("Search", id="SearchBtn")
+        with TabbedContent():
+            with TabPane("Playlist", id="PlaylistTab"):
+                yield DataTable(id="PlaylistTable")
+            with TabPane("Songs", id="SongsTab"):
+                yield ListView(id="SongsListView")
         # yield Label("DEBUG", id="debug")
-        yield DataTable(id="SongList")
         yield Footer()
 
     def on_mount(self) -> None:
@@ -55,15 +63,20 @@ class MusicApp(App):
         self.title = "Music"
         self.sub_title = "No Music for Playing"
 
-        self.songList_table = self.query_one("#SongList", DataTable)
-        self.songList_table.cursor_type = "row"
-        self.songList_table.zebra_stripes = True
-        self.songList_table.add_columns("Title", "Duration", "Uploader", "URL")
+        # Initial playlist table
+        self.playlist_table = self.query_one("#PlaylistTable", DataTable)
+        self.playlist_table.cursor_type = "row"
+        self.playlist_table.zebra_stripes = True
+        self.playlist_table.add_columns("Title", "Duration")
+
+        # Initial songs ListView
+        self.songs_listview = self.query_one("#SongsListView", ListView)
 
     #
     # Search Music
     #
     @on(Input.Submitted, "#SearchMusic")
+    @on(Button.Pressed, "#SearchBtn")
     async def submit_search(self) -> None:
         search_input = self.query_one("#SearchMusic", Input)
         if search_input.value:
@@ -74,19 +87,51 @@ class MusicApp(App):
                 )
 
     async def get_source(self, search_input: Input) -> None:
+        # TODO: Implement search not match error handler.
         source = await YTDLSource.create_source(search_input.value)
-        row_key = self.songList_table.add_row(
-            source.title, source.duration, source.uploader, source.url
-        )
+
+        # Add to playlist table
+        row_key = self.playlist_table.add_row(source.title, source.duration)
+
+        # Add to songs history
+        if source.url not in self.songs_history:
+            self.songs_history.append(source.url)
+            self.songs_listview.insert(
+                0,
+                (
+                    Label(f"{source.title}"),
+                    Label(f"{source.duration}"),
+                    Label(f"{source.uploader}"),
+                    Label(f"{source.url}"),
+                ),
+            )
+
         search_input.value = ""
-        await self.voice_state.songs.put(voice.Song(source, row_key))
+        song = voice.Song(source, row_key)
+        await self.voice_state.songs.put(song)
         # self.query_one("#debug", Static).update(
         #     f"{source.title}:{len(self.voice_state.songs)}"
         # )
 
     #
-    # Sougs Queue
+    # Playlist Table
     #
+    @on(DataTable.RowSelected, "#PlaylistTable")
+    async def playlist_table_selected(self) -> None:
+        # Get the keys for the row and column under the cursor.
+        row_key, _ = self.playlist_table.coordinate_to_cell_key(
+            self.playlist_table.cursor_coordinate
+        )
+        if self.voice_state.current.row_key == row_key:
+            return
+
+        # Find song
+        idx, song = self.voice_state.songs.find(row_key)
+        self.voice_state.songs.remove(idx)
+        self.voice_state.songs.add_first(song)
+
+        # Play next song
+        self.voice_state.player.stop()
 
     #
     # MPV Handler
@@ -124,12 +169,12 @@ class MusicApp(App):
         return value
 
     def play_next_song(self):
-        # Clear Song list table
+        # Clear Playlist table
         if self.voice_state.current:
-            if self.songList_table.row_count > 1:
-                self.songList_table.remove_row(self.voice_state.current.row_key)
+            if self.playlist_table.row_count > 1:
+                self.playlist_table.remove_row(self.voice_state.current.row_key)
             else:
-                self.songList_table.clear()
+                self.playlist_table.clear()
 
         # Trigger next song
         self.voice_state.next.set()
