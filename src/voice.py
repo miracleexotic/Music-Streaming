@@ -51,6 +51,19 @@ class SongQueue(asyncio.Queue):
     def remove(self, index: int):
         del self._queue[index]
 
+    def find(self, row_key):
+        idx = None
+        song = None
+        for i, s in enumerate(self._queue):
+            if s.row_key == row_key:
+                idx = i
+                song = s
+                break
+        return idx, song
+
+    def add_first(self, song: Song):
+        self._queue.insert(0, song)
+
 
 class VoiceState:
     def __init__(self, player: mpv.MPV):
