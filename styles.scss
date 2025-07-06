@@ -3,9 +3,10 @@ Header {
 }
 
 #SearchBar {
+  dock: top;
   height: auto;
   width: 100%;
-  margin: 1 0 1 0;
+  margin: 2 0 1 0;
 
   & #SearchIcon {
     border: hidden;
