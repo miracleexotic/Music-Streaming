@@ -16,6 +16,7 @@ from textual.widgets import (
     TabbedContent,
     TabPane,
     Rule,
+    RichLog,
 )
 from textual.containers import Horizontal, Vertical
 
@@ -56,7 +57,7 @@ class MusicApp(App):
                 yield DataTable(id="PlaylistTable")
             with TabPane("Songs", id="SongsTab"):
                 yield ListView(id="SongsListView")
-        # yield Label("DEBUG", id="debug")
+        yield RichLog(id="debug")
         yield Footer()
 
     def on_mount(self) -> None:
@@ -122,9 +123,6 @@ class MusicApp(App):
         search_input.value = ""
         song = voice.Song(source, row_key)
         await self.voice_state.songs.put(song)
-        # self.query_one("#debug", Static).update(
-        #     f"{source.title}:{len(self.voice_state.songs)}"
-        # )
 
     #
     # Playlist Table
@@ -145,6 +143,13 @@ class MusicApp(App):
 
         # Play next song
         self.voice_state.player.stop()
+
+    #
+    # Songs ListView
+    #
+    @on(ListView.Selected, "#SongsListView")
+    async def songs_listview_selected(self, item) -> None:
+        self.query_one("#debug", RichLog).write(f"{item}")
 
     #
     # MPV Handler
