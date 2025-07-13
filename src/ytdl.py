@@ -41,6 +41,7 @@ class YTDLSource:
         )
         self.tags = data.get("tags") or ""
         self.url = data.get("webpage_url") or ""
+        self.vid = self.url.split("https://www.youtube.com/watch?v=")[1] or ""
         self.views = data.get("view_count") or ""
         self.likes = data.get("like_count") or ""
         self.dislikes = data.get("dislike_count") or ""
@@ -118,9 +119,9 @@ class YTDLSource:
                 duration.append(f"{days}")
             if hours > 0:
                 duration.append(f"{hours}")
-            if minutes > 0:
+            if minutes >= 0:
                 duration.append(f"{minutes}")
-            if seconds > 0:
+            if seconds >= 0:
                 duration.append(f"{seconds}")
 
             value = ":".join(duration)
