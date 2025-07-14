@@ -84,6 +84,28 @@ class YTDLSource:
 
         return cls(data=info)
 
+    @classmethod
+    async def search_source(cls, search: str):
+        max_search = 5
+        if not search.startswith("https://www.youtube.com"):
+            search = f"ytsearch{max_search}:{search}"
+
+        loop = asyncio.get_event_loop()
+
+        partial = lambda: cls.ytdl.extract_info(
+            search,
+            download=False,
+            process=False,
+        )
+        search_data = await loop.run_in_executor(None, partial)
+
+        if search_data is None:
+            raise YTDLError(f"Couldn't find anything that matches `{search}`")
+
+        entries = search_data["entries"]
+
+        return entries
+
     @staticmethod
     async def get_info(data):
         if "entries" not in data:
@@ -138,7 +160,20 @@ if __name__ == "__main__":
     # search = "https://www.youtube.com/watch?v=Dcx9R4QSeik"
 
     search = input("> ")
-    source = asyncio.get_event_loop().run_until_complete(
-        YTDLSource.create_source(search)
+
+    # Play
+    # source = asyncio.get_event_loop().run_until_complete(
+    #     YTDLSource.create_source(search)
+    # )
+    # print(f"Stream Url: {source.stream_url}")
+
+    # Search 5 match
+    entries = asyncio.get_event_loop().run_until_complete(
+        YTDLSource.search_source(search)
     )
-    print(f"Stream Url: {source.stream_url}")
+    for entry in entries:
+        print(f"{entry.get('title')}")
+        print(f"{YTDLSource.parse_duration(int(entry.get('duration')))}")
+        print(f"{entry.get('uploader')}")
+        print(f"{entry.get('url')}")
+        print("---")
