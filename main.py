@@ -23,6 +23,7 @@ from textual.containers import Horizontal, Vertical
 
 # Custom widgets and screen
 from src.screen.confirmation import ConfirmationScreen
+from src.screen.search import SearchScreen
 
 # Libs
 import asyncio
@@ -104,20 +105,18 @@ class MusicApp(App):
             self.search_input.value = ""
 
     async def submit_get_source(self, search: str) -> None:
+        entries = await YTDLSource.search_source(search)
 
-        # TODO: Implement searching screen top 5
-
-        source = await self.create_source(search)
-
-        # Add to playlist table
-        row_key = await self.insert_playlist(source)
-
-        # Add to song listview
-        await self.insert_song(source)
-
-        # Add to songs queue
-        song = voice.Song(source, row_key)
-        await self.voice_state.songs.put(song)
+        # Search Screen
+        self.push_screen(
+            SearchScreen(
+                search=search,
+                entries=entries,
+                insert_playlist=self.insert_playlist,
+                insert_song=self.insert_song,
+                songs=self.voice_state.songs,
+            )
+        )
 
     #
     # Playlist Table
